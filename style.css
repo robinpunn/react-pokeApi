@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    background-image: linear-gradient(to right, green, blue);
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.head {
+    flex-grow: 4;
+    font-size: 2rem;
+    color: red;
+    width: 100%;
+}
+
+.mon {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.poke {
+    font-size: 1.3rem;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid red;
+    background-image: linear-gradient(to top, white, red);
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom, white, red);
+}
+    
+ 
