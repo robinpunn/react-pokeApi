@@ -1,6 +1,24 @@
 .battle {
+  width: 100vw;
+  height: 60vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.red {
+  margin: 0 auto;
+  width: 30%;
+  background: rgba(255, 0, 0, 0.75);
+  border-radius: 10%;
+  filter: drop-shadow(0 0 10rem #f605ceaa);
+}
+
+.blue {
+  margin: 0 auto;
+  width: 30%;
+  background: rgba(0, 0, 255, 0.75);
+  border-radius: 10%;
+  filter: drop-shadow(0 0 10rem #f605ceaa);
 }

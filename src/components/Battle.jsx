@@ -6,8 +6,12 @@ export default class Battle extends Component {
   render() {
     return (
       <div className="battle">
-        <Pokemon />
-        <Pokemon />
+        <div className="red">
+          <Pokemon />
+        </div>
+        <div className="blue">
+          <Pokemon />
+        </div>
       </div>
     );
   }

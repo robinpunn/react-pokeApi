@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import PokeBall from "./PokeBall";
+import "./Pokemon.css";
 
 export default class Pokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      poke: "",
+      poke: "???",
       sprites: "",
     };
   }
@@ -30,9 +31,11 @@ export default class Pokemon extends Component {
   /*fetch pokemon from api*/
   render() {
     return (
-      <div className="pokemon">
-        <h3 id="poke">{this.state.poke}</h3>
-        <img src={this.state.sprites} alt={this.state.poke} />
+      <div>
+        <h3 id="title">{this.state.poke}</h3>
+        <div className="pokemon">
+          <img id="image" src={this.state.sprites} alt="" />
+        </div>
         <PokeBall onClick={this.change} />
       </div>
     );
