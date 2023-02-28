@@ -5,7 +5,7 @@ export default class PokeBall extends Component {
   render(props) {
     return (
       <div className="pokeball">
-        <button onClick={this.props.onClick}></button>
+        <button className="ball" onClick={this.props.onClick}></button>
       </div>
     );
   }
