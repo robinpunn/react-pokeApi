@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Pokemon.css";
-import getPokemon from "../services/api";
 
 export default class Pokemon extends Component {
   render() {

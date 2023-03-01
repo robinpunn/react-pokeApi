@@ -1,6 +1,6 @@
 const getPokemon = async () => {
   const pokeArray = [];
-  for (let i = 1; i < 30; i += 3) {
+  for (let i = 1; i < 151; i++) {
     const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     const data = await resp.json();
     const name = data.name;
