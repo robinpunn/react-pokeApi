@@ -1,40 +1,43 @@
 import React, { Component } from "react";
 import PokeBall from "./PokeBall";
 import "./Pokemon.css";
+import changePokemon from "../services/api";
 
 export default class Pokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
       poke: "???",
-      sprites: "",
+      pic: "",
+      hp_value: null,
+      attack_value: null,
+      defense_value: null,
+      speed_value: null,
+      types: [],
+      typeData: [],
     };
   }
-  random = (min, max) => {
-    return Math.round(Math.random() * (max - min) + min);
-  };
-
-  changePokemon = async () => {
-    let pick = this.random(1, 150);
-    let resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${pick}`);
-    let data = await resp.json();
-    let pic = data.sprites.front_default;
+  /*fetch pokemon from api*/
+  change = async () => {
+    const result = await changePokemon();
+    console.log(result, result.typeData);
     this.setState({
-      poke: data.name,
-      sprites: `${pic}`,
+      poke: result.name,
+      pic: result.pic,
+      hp_value: result.hp_value,
+      attack_value: result.attack_value,
+      defense_value: result.defense_value,
+      speed_value: result.speed_value,
+      types: result.types,
+      typeData: result.typeData,
     });
   };
-
-  change = () => {
-    this.changePokemon();
-  };
-  /*fetch pokemon from api*/
   render() {
     return (
       <div>
         <h3 id="title">{this.state.poke}</h3>
         <div className="pokemon">
-          <img id="image" src={this.state.sprites} alt="" />
+          <img id="image" src={this.state.pic} alt="" />
         </div>
         <PokeBall onClick={this.change} />
       </div>

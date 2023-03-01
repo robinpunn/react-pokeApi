@@ -1,7 +1,8 @@
-import fetch from "node-fetch";
-import { random } from "./utils";
+const random = (min, max) => {
+  return Math.round(Math.random() * (max - min) + min);
+};
 
-export const changePokemon = async () => {
+const changePokemon = async () => {
   let pick = random(1, 1008);
   const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${pick}`);
   const data = await resp.json();
@@ -48,3 +49,5 @@ export const changePokemon = async () => {
     typeData,
   };
 };
+
+export default changePokemon;
