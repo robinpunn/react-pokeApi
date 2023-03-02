@@ -5,7 +5,7 @@ export default class Pokemon extends Component {
   render() {
     const { name, pic, types } = this.props;
     return (
-      <div className="pokemon">
+      <div className="pokemon" key={name}>
         <img id="image" src={pic} alt="" />
         <h3 id="title">{name}</h3>
         <div className="types">{types[0]}</div>

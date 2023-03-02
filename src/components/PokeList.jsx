@@ -9,6 +9,7 @@ export default class PokeList extends Component {
       <div className="pokeList">
         {pokeArray.map((pokemon) => (
           <Pokemon
+            key={pokemon.name}
             name={pokemon.name}
             pic={pokemon.pic}
             types={pokemon.types}

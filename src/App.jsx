@@ -33,6 +33,12 @@ export default class App extends Component {
     });
   };
 
+  onSearchChange = (event) => {
+    this.setState({
+      searchField: event.target.value,
+    });
+  };
+
   handleClearLocalStorage = () => {
     localStorage.removeItem("pokeArray");
     this.setState({
@@ -41,11 +47,16 @@ export default class App extends Component {
   };
 
   render() {
+    const filteredPokeArray = this.state.pokeArray.filter((pokemon) => {
+      return pokemon.name
+        .toLowerCase()
+        .includes(this.state.searchField.toLowerCase());
+    });
     return (
       <div className="App">
         <h1>the OG pokeDEX</h1>
-        <PokeSearch searchField={this.state.searchField} />
-        <PokeList pokeArray={this.state.pokeArray} />
+        <PokeSearch onSearchChange={this.onSearchChange} />
+        <PokeList pokeArray={filteredPokeArray} />
       </div>
     );
   }
