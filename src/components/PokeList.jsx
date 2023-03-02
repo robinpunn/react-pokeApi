@@ -13,6 +13,7 @@ export default class PokeList extends Component {
             name={pokemon.name}
             pic={pokemon.pic}
             types={pokemon.types}
+            flavorText={pokemon.flavorText}
           />
         ))}
       </div>

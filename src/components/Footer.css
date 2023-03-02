@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3rem;
+  padding: 0 1rem;
+  border-radius: 5%;
+  filter: drop-shadow(0 0 10rem #f605ceaa);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10rem #f605ceaa);
+}
+
+.clear,
+.fetch {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  filter: drop-shadow(0 0 10rem #f605ceaa);
+}
+
+.clear:hover,
+.fetch:hover {
+  cursor: pointer;
+}

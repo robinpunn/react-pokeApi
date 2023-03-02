@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Footer from "./components/Footer";
 import PokeList from "./components/PokeList";
 import PokeSearch from "./components/PokeSearch";
 import getPokemon from "./services/api";
@@ -52,11 +53,20 @@ export default class App extends Component {
         .toLowerCase()
         .includes(this.state.searchField.toLowerCase());
     });
+    console.log(this.state.pokeArray);
     return (
       <div className="App">
         <h1>the OG pokeDEX</h1>
         <PokeSearch onSearchChange={this.onSearchChange} />
-        <PokeList pokeArray={filteredPokeArray} />
+        {this.state.pokeArray.length !== 0 ? (
+          <PokeList pokeArray={filteredPokeArray} />
+        ) : (
+          <h1>LOADING</h1>
+        )}
+        <Footer
+          clear={this.handleClearLocalStorage}
+          fetch={this.handlePokemonChange}
+        />
       </div>
     );
   }
