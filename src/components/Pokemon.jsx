@@ -11,7 +11,9 @@ export default class Pokemon extends Component {
         <h3 id="title">{name}</h3>
         <div className="types">{types[0]}</div>
         <div className="flavor-container">
-          <div className="flavor-text">{flavorText}</div>
+          <div className="flavor-text-wrapper">
+            <div className="flavor-text">{flavorText}</div>
+          </div>
         </div>
       </div>
     );

@@ -11,14 +11,12 @@
   background: rgba(52, 50, 50, 0.55);
   box-shadow: 0 0 1rem #cfe2cfaa;
   transition: all 0.5s ease-in-out;
-  filter: blur(0);
 }
 
 .pokemon:hover {
   transform: scale(1.05);
   box-shadow: 0 0 1rem #b30593;
   color: #b30593;
-  /* filter: blur(3px); */
 }
 
 #title {
@@ -45,25 +43,38 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #b30593;
+  background-color: rgba(52, 50, 50, 0.33);
   border-radius: 1rem;
   padding: 0.5rem;
   margin: 0.5rem;
   transition: all 0.5s ease-in-out;
 }
 
+.flavor-text-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
 .flavor-text {
   font-size: 1rem;
   font-weight: 500;
   text-transform: capitalize;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
 }
 
-.pokemon:hover .flavor-container .flavor-text {
+.pokemon:hover .flavor-container {
   display: block;
-  filter: blur(0);
+}
+
+.flavor-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 1rem 1rem 0;
+  border-color: #b30593 transparent transparent transparent;
 }
