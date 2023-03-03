@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import PokeList from "./components/PokeList";
 import PokeSearch from "./components/PokeSearch";
+import PokeScroll from "./components/PokeScroll";
 import getPokemon from "./services/api";
 
 export default class App extends Component {
@@ -58,11 +59,13 @@ export default class App extends Component {
       <div className="App">
         <h1>the OG pokeDEX</h1>
         <PokeSearch onSearchChange={this.onSearchChange} />
-        {this.state.pokeArray.length !== 0 ? (
-          <PokeList pokeArray={filteredPokeArray} />
-        ) : (
-          <h1>LOADING</h1>
-        )}
+        <PokeScroll>
+          {this.state.pokeArray.length !== 0 ? (
+            <PokeList pokeArray={filteredPokeArray} />
+          ) : (
+            <h1>LOADING</h1>
+          )}
+        </PokeScroll>
         <Footer
           clear={this.handleClearLocalStorage}
           fetch={this.handlePokemonChange}

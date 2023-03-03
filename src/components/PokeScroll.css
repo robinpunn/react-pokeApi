@@ -1,0 +1,11 @@
+.poke-scroll {
+  overflow-y: scroll;
+  border: 1px solid blueviolet;
+  height: 25rem;
+}
+
+@media screen and (min-width: 40rem) {
+  .poke-scroll {
+    height: 25rem;
+  }
+}
