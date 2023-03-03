@@ -38,8 +38,8 @@ export default class Pokemon extends Component {
     };
     return (
       <div className="pokemon" key={name} style={style}>
-        <img id="image" src={pic} alt="" />
         <h3 id="title">{name}</h3>
+        <img id="image" src={pic} alt="" />
         <div className="types">
           {types.includes("normal") && types.length > 1 ? (
             <>
