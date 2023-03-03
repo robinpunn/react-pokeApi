@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import PokeList from "./components/PokeList";
 import PokeSearch from "./components/PokeSearch";
 import PokeScroll from "./components/PokeScroll";
+import ErrorBoundry from "./components/ErrorBoundry";
 import getPokemon from "./services/api";
 
 export default class App extends Component {
@@ -60,12 +61,15 @@ export default class App extends Component {
         <h1>the OG pokeDEX</h1>
         <PokeSearch onSearchChange={this.onSearchChange} />
         <PokeScroll>
-          {this.state.pokeArray.length !== 0 ? (
-            <PokeList pokeArray={filteredPokeArray} />
-          ) : (
-            <h1>LOADING</h1>
-          )}
+          <ErrorBoundry>
+            {this.state.pokeArray.length !== 0 ? (
+              <PokeList pokeArray={filteredPokeArray} />
+            ) : (
+              <h1>LOADING</h1>
+            )}
+          </ErrorBoundry>
         </PokeScroll>
+
         <Footer
           clear={this.handleClearLocalStorage}
           fetch={this.handlePokemonChange}

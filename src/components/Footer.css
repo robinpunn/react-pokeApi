@@ -24,6 +24,7 @@
   justify-content: center;
   margin: 0 1rem;
   filter: drop-shadow(0 0 10rem #f605ceaa);
+  width: 9rem;
 }
 
 .clear:hover,
