@@ -3,7 +3,7 @@
   border: 3px solid blueviolet;
   box-shadow: 0 0 1rem #cfe2cfaa;
   height: 25rem;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 
 .poke-scroll::-webkit-scrollbar {
