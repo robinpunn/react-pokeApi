@@ -6,10 +6,6 @@
   border-radius: 0.25rem;
 }
 
-.poke-scroll::-webkit-scrollbar {
-  width: 0.25em;
-}
-
 .poke-scroll::-webkit-scrollbar-thumb {
   background-color: blueviolet;
   outline: 1px solid slategrey;
@@ -18,5 +14,8 @@
 @media screen and (min-width: 40rem) {
   .poke-scroll {
     height: 25rem;
+  }
+  .poke-scroll::-webkit-scrollbar {
+    width: 0.25em;
   }
 }
