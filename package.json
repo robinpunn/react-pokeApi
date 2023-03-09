@@ -1,11 +1,14 @@
 {
   "name": "react-pokeapi",
   "private": true,
+  "homepage": "https://robinpunn.github.io/react-pokeApi/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
