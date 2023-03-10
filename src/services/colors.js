@@ -1,5 +1,5 @@
 export const backgroundColors = {
-  grass: "rgba(120, 200, 80, 0.25)",
+  grass: "rgba(80, 255, 80, 0.25)",
   fire: "rgba(240, 128, 48, 0.25)",
   water: "rgba(104, 144, 240, 0.25)",
   bug: "rgba(168, 184, 32, 0.25)",

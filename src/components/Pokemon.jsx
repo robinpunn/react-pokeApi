@@ -44,7 +44,10 @@ export default class Pokemon extends Component {
           {types.includes("normal") && types.length > 1 ? (
             <>
               <span className="type" key={types[1]} style={text2}>
-                {types[1]} /
+                {types[1]}{" "}
+                <span className="type" style={{ color: "white" }}>
+                  {" / "}
+                </span>
               </span>
               <span className="type" key={types[0]} style={text1}>
                 {types[0]}
